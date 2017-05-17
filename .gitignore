@@ -1,0 +1,6 @@
+node_modules/
+dist.cpp.txt
+dist.crx
+dist.pem
+dist/app.js
+dist/app.js.map
