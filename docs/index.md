@@ -1,5 +1,14 @@
 # Documentation #
 
+ - [What you will need](#what-you-will-need)
+ - [Getting started](#getting-started)
+     - [Example code](#example-code)
+ - [Chrome app](#chrome-app)
+     - [Using the app and controlling your robot](#using-the-app-and-controlling-your-robot)
+ - [Arduino library/API](#arduino-libraryapi)
+ - [Troubleshooting](#troubleshooting)
+ - [Setting up the XBees](#setting-up-the-xbees)
+
 ## What you will need ##
 - 2x XBee series 1 (series 2 will probably work but it's untested)
 - USB adapter for XBee
@@ -11,7 +20,7 @@
 
 Download the crx and Arduino library from the [releases page](https://github.com/erikuhlmann/Arduino-Robot-Control/releases)
 
-To install the crx in Chrome, open chrome://extensions and drag the crx onto it.
+To install the crx in Chrome, open `chrome://extensions` and drag the crx onto it.
 
 - *Arduino IDE*: Extract the library zip file into your Arduino libraries folder (eg `C:\Users\You\Documents\Arduino\libraries`). Then make sure you also install the XBee library to the IDE.
 - *Codebender*: Use the single-file version and copy+paste it into codebender.
@@ -98,7 +107,7 @@ On the left is the XBee connection section. When the XBee detects your robot, yo
 
 In the middle is the controller section. It displays all controller axis and button values (red = negative, blue = positive).
 
-On the right is the enable button and log. Click enable to enable your robot (in auto or teleop). In the middle is a log, which robot code can display to (with caveats - see API below). There's also a settings button which configures whether it should run auto then teleop, or just auto, or just teleop, and the time given for each period. You can also use the standard FRC shortcuts: \[\]\\ (brackets and backslash all at the same time) to enable, ENTER or SPACE to disable.
+On the right is the enable button and log. Click enable to enable your robot (in auto or teleop). In the middle is a log, which robot code can display to (with caveats - see API below). There's also a settings button which configures whether it should run auto then teleop, or just auto, or just teleop, and the time given for each period. You can also use the standard FRC shortcuts: `\[\]\\` (brackets and backslash all at the same time) to enable, `ENTER` or `SPACE` to disable.
 
 ## Arduino library/API ##
 
@@ -161,6 +170,7 @@ enum ControllerButton {
 ## Setting up the XBees ##
 
 To set up the XBees, you need [Digi's XCTU software](https://www.digi.com/products/xbee-rf-solutions/xctu-software/xctu). It's mostly self-explanatory and I'm sure docs exist. Refer to the [XBee datasheet](https://www.sparkfun.com/datasheets/Wireless/Zigbee/XBee-Datasheet.pdf) for settings codes.
+
 Robot XBees
 - baud: 57600 (you can try 115200 but it didn't work for me)
 - API enable: enabled with PPP (enabled with escapes)
